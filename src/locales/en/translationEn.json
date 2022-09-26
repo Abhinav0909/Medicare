@@ -1,0 +1,37 @@
+{
+  "langName": "English",
+  "logo": "MediCare",
+
+  "navLinkHome": "Home",
+  "navLinkDisease": "Disease Prediction",
+  "navLinkDoctors": "Doctors",
+  "navChangeLang": "Change Language",
+  "navLinkLogout": "Logout",
+
+  "homeTitle": "Who we are",
+  "homeAbout": "MediCare is a one-stop location to discuss different medical milestones, and AI Disease prediction systems, transfer money through a secure payment system using Solana blockchain, and finally, a translator to get the whole web app in the language one is comfortable with and hence dissolve any communication barrier.",
+  "homeWhatElse": "What else do we have",
+  "homeDesc": "MediCare is a web app where you can:",
+  "homePt1": "Easy to book appoinment with the doctors",
+  "homePt2": "Disease predication for Skin cancer",
+  "homePt3": "COVID 19 predication using chest X-Ray scan upload",
+  "homePt4": "Detect Brain Tumor by just uploading the brain MRI-Scan",
+  "homePt5": "Application available in multiple languages",
+
+  "diseasePredSkinCancer": "Skin Cancer",
+  "diseasePredCOVID": "COVID'19 Prediction",
+  "diseasePredBrainTumor": "Brain Tumor",
+
+  "doctorName1": "Dr. Aliyah",
+  "doctorName1Day": "Mon-Fir",
+  "doctorName2": "Dr. Alexandra",
+  "doctorName2Day": "Wed-Fir",
+  "doctorName3": "Dr. Jason",
+  "doctorName3Day": "Wed-Fir",
+  "doctorBookAppointment": "Book Appointment",
+  "doctorEnterChatroom": "Enter Chatroom",
+
+  "footerWith": "with",
+  "footerAnd": "and",
+  "footerBy": "by team 1."
+}
