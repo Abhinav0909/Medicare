@@ -29,9 +29,5 @@
   "doctorName3": "Dr. Jason",
   "doctorName3Day": "Wed-Fir",
   "doctorBookAppointment": "Book Appointment",
-  "doctorEnterChatroom": "Enter Chatroom",
-
-  "footerWith": "with",
-  "footerAnd": "and",
-  "footerBy": "by team 1."
+  "doctorEnterChatroom": "Enter Chatroom"
 }
