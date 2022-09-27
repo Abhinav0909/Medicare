@@ -1,6 +1,6 @@
 {
-  "langName": "Mandarin",
-  "logo": "MedX",
+  "langName": "英文",
+  "logo": "医疗保健",
 
   "navLinkHome": "首页",
   "navLinkDisease": "疾病预测",
@@ -9,29 +9,25 @@
   "navLinkLogout": "注销",
 
   "homeTitle": "我们是谁",
-  "homeAbout": "MedX 是讨论不同医学里程碑和 AI 疾病预测系统的一站式地点，通过使用 Solana 区块链的安全支付系统转移资金，最后是翻译器，以使用一种语言获取整个网络应用程序适应并因此消除任何沟通障碍。",
+  "homeAbout" :"MediCare 是讨论不同医学里程碑和 AI 疾病预测系统的一站式地点,可将您的所有记录安全地存储在区块链上,最后,翻译人员可以使用自己熟悉的语言获取整个 Web 应用程序从而消除任何沟通障碍。",
   "homeWhatElse": "我们还有什么",
-  "homeDesc": "MedX 难民是一个您可以使用的网络应用程序",
+  "homeDesc": "MediCare 是一个网络应用程序,您可以:",
   "homePt1": "轻松预约医生",
-  "homePt2": "皮肤癌的疾病预测",
-  "homePt3": "使用胸部 X 射线扫描上传的 COVID 19 预测",
-  "homePt4": "通过上传大脑 MRI-Scan 检测脑肿瘤",
+  "homePt2" :"皮肤癌的疾病预测" ,
+  "homePt3" :"使用胸部 X 射线扫描上传的 COVID 19 预测" ,
+  "homePt4": "只需上传大脑 MRI-Scan 即可检测脑肿瘤",
   "homePt5": "应用程序支持多种语言",
 
   "diseasePredSkinCancer": "皮肤癌",
-  "diseasePredCOVID": "COVID'19 预测",
+  "diseasePredCOVID":"COVID'19 预测",
   "diseasePredBrainTumor": "脑肿瘤",
 
   "doctorName1": "阿利亚医生",
-  "doctorName1Day": "周一至冷杉",
+  "doctorName1Day": "Mon-Fir",
   "doctorName2": "亚历山德拉博士",
   "doctorName2Day": "星期三-冷杉",
   "doctorName3": "杰森博士",
   "doctorName3Day": "星期三-冷杉",
   "doctorBookAppointment": "预约预约",
-  "doctorEnterChatroom": "进入聊天室",
-
-  "footerWith": "和",
-  "footerAnd": "和",
-  "footerBy": "按团队 1."
+  "doctorEnterChatroom": "进入聊天室"
 }
