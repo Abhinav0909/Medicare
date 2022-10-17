@@ -15,3 +15,7 @@ https://medium.com/arteos-ai/the-differences-between-sigmoid-and-softmax-activat
 ## Google Colab
 
 https://colab.research.google.com/drive/1G1iPd9osPgV_iPRwShV_y5-MCbJADa-e
+
+## Dataset
+
+https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000
