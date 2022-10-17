@@ -11,3 +11,7 @@ https://medium.com/@mayankverma05032001/binary-classification-using-convolution-
 https://towardsdatascience.com/covolutional-neural-network-cb0883dd6529
 
 https://medium.com/arteos-ai/the-differences-between-sigmoid-and-softmax-activation-function-12adee8cf322#:~:text=The%20Sigmoid%20Activation%20Function%20is,Function%20is%20the%20right%20choice.
+
+## Google Colab
+
+https://colab.research.google.com/drive/1G1iPd9osPgV_iPRwShV_y5-MCbJADa-e
