@@ -21,7 +21,7 @@ export default function Disease() {
             <div className="grid place-content-center text-3xl text-center items-center align-middle h-full font-semibold text-white">{t('diseasePredSkinCancer')}</div>
           </div>
         </Link>
-
+{/* 
         <Link to="/covid">
           <div className="w-[22rem] h-[22rem] cursor-pointer transition duration-500 transform hover:scale-105 border-4 border-secondary rounded-lg">
             <div className="grid place-content-center text-3xl text-center items-center align-middle h-full font-semibold text-white">{t('diseasePredCOVID')}</div>
@@ -32,7 +32,7 @@ export default function Disease() {
           <div className="w-[22rem] h-[22rem] cursor-pointer transition duration-500 transform hover:scale-105 border-4 border-secondary rounded-lg">
             <div className="grid place-content-center text-3xl text-center items-center align-middle h-full font-semibold text-white">{t('diseasePredBrainTumor')}</div>
           </div>
-        </Link>
+        </Link> */}
 
       </div>
     </div>

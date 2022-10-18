@@ -1,4 +1,4 @@
-# MediCare
+# Skin Cancer Classifier
 
 ## Presentation
 
