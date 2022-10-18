@@ -19,3 +19,7 @@ https://colab.research.google.com/drive/1G1iPd9osPgV_iPRwShV_y5-MCbJADa-e
 ## Dataset
 
 https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000
+
+## Kaggle
+
+https://www.kaggle.com/code/harshal0902/minor-project-skin-cancer-classifier/edit/run/108485398
