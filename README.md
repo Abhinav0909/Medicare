@@ -23,3 +23,18 @@ https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000
 ## Kaggle
 
 https://www.kaggle.com/code/harshal0902/minor-project-skin-cancer-classifier/edit/run/108485398
+
+## Final Review
+
+- [x] PPPT
+- [ ] Video of demonstration-harshal
+- [x] Query response sheet
+  - Why you choose this algorithm?
+  - Why to choose blockchain for storing the docs?
+  - Why a web application not a mobile app?
+  - Who are the target audience?
+- [x] Plagiarism report -we shouldn't make it
+- [ ] Project book-Abhinav
+- [ ] Project log book-Abhinav
+- [ ] Project report -harshal
+
