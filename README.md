@@ -27,6 +27,7 @@ https://www.kaggle.com/code/harshal0902/minor-project-skin-cancer-classifier/edi
 ## Final Review
 
 - [x] PPPT
+- [ ] Code
 - [ ] Video of demonstration-harshal
 - [x] Query response sheet
   - Why you choose this algorithm?
@@ -34,7 +35,7 @@ https://www.kaggle.com/code/harshal0902/minor-project-skin-cancer-classifier/edi
   - Why a web application not a mobile app?
   - Who are the target audience?
 - [x] Plagiarism report -we shouldn't make it
-- [ ] Project book-Abhinav
-- [ ] Project log book-Abhinav
-- [ ] Project report -harshal
+- [x] Project book-Abhinav
+- [x] Project log book-Abhinav
+- [ ] Project report -Harshal
 
