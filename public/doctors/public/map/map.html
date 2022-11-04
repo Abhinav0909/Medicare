@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>MediCare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body {
+            color: #404040;
+            font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .sidebar {
+            position: absolute;
+            width: 33.3333%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            border-right: 1px solid rgba(0, 0, 0, 0.25);
+        }
+
+        .map {
+            position: absolute;
+            left: 33.3333%;
+            width: 66.6666%;
+            top: 0;
+            bottom: 0;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin: 0;
+            font-weight: 400;
+            line-height: 20px;
+            padding: 20px 2px;
+        }
+
+        a {
+            color: #404040;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #101010;
+        }
+
+        .listings {
+            height: 100%;
+            overflow: auto;
+            padding-bottom: 60px;
+        }
+
+        .listings .item {
+            display: block;
+            border-bottom: 1px solid #eee;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .listings .item:last-child {
+            border-bottom: none;
+        }
+
+        .listings .item .title {
+            display: block;
+            color: #00853e;
+            font-weight: 700;
+        }
+
+        .listings .item .title small {
+            font-weight: 400;
+        }
+
+        .listings .item.active .title,
+        .listings .item .title:hover {
+            color: #8cc63f;
+        }
+
+        .listings .item.active {
+            background-color: #f8f8f8;
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+            border-left: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        ::-webkit-scrollbar-track {
+            background: none;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00853e;
+            border-radius: 0;
+        }
+
+        .marker {
+            border: none;
+            cursor: pointer;
+            height: 56px;
+            width: 56px;
+            background-image: url(./marker.svg);
+        }
+
+        /* Marker tweaks */
+        .mapboxgl-popup {
+            padding-bottom: 50px;
+        }
+
+        .mapboxgl-popup-close-button {
+            display: none;
+        }
+
+        .mapboxgl-popup-content {
+            font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+            padding: 0;
+            width: 180px;
+        }
+
+        .mapboxgl-popup-content h3 {
+            background: #91c949;
+            color: #fff;
+            margin: 0;
+            padding: 10px;
+            border-radius: 3px 3px 0 0;
+            font-weight: 700;
+            margin-top: -15px;
+        }
+
+        .mapboxgl-popup-content h4 {
+            margin: 0;
+            padding: 10px;
+            font-weight: 400;
+        }
+
+        .mapboxgl-popup-content div {
+            padding: 10px;
+        }
+
+        .mapboxgl-popup-anchor-top>.mapboxgl-popup-content {
+            margin-top: 15px;
+        }
+
+        .mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
+            border-bottom-color: #91c949;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div id="listings" class="listings"></div>
+    </div>
+    <div id="map" class="map"></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaGFyc2hhbC0wOTAyIiwiYSI6ImNreGQ4dHB5aTEzY2IycHBnbXYzZ2pxdXAifQ.Gf9W5Ns9MkS9MQDjk9PB9Q';
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [-77.034084142948, 38.909671288923],
+            zoom: 13,
+            scrollZoom: false
+        });
+
+        const stores = {
+            'type': 'FeatureCollection',
+            'features': [
+                {
+                    'type': 'Feature',
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [45.3929, 75.7217]
+                    },
+                    'properties': {
+                        'phone': '+16137985555',
+                        'address': 'The Ottawa Hospital Civic Campus',
+                        'city': 'Ottawa'
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [45.4320746286, 75.6973580294]
+                    },
+                    'properties': {
+                        'phone': '+16135626262',
+                        'address': 'Bruyère - Hôpital Saint-Vincent Hospital',
+                        'city': 'Ottawa'
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [45.3350, 75.8076]
+                    },
+                    'properties': {
+                        'phone': '+16137212000',
+                        'address': 'Queensway Carleton Hospital',
+                        'city': 'Ottawa'
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [45.3961, 75.6694]
+                    },
+                    'properties': {
+                        'phone': '+16137985555',
+                        'address': 'The Ottawa Hospital Riverside Campus',
+                        'city': 'Ottawa'
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [75.7217, 45.3929]
+                    },
+                    'properties': {
+                        'phone': '+16137377600',
+                        'address': 'Childrens Hospital of Eastern Ontario (CHEO)',
+                        'city': 'Ottawa'
+                    }
+                }
+            ]
+        };
+
+        stores.features.forEach((store, i) => {
+            store.properties.id = i;
+        });
+
+        map.on('load', () => {
+            map.addSource('places', {
+                'type': 'geojson',
+                'data': stores
+            });
+
+            buildLocationList(stores);
+            addMarkers();
+        });
+
+        function addMarkers() {
+            for (const marker of stores.features) {
+                const el = document.createElement('div');
+                el.id = `marker-${marker.properties.id}`;
+                el.className = 'marker';
+
+                new mapboxgl.Marker(el, { offset: [0, -23] })
+                    .setLngLat(marker.geometry.coordinates)
+                    .addTo(map);
+
+                el.addEventListener('click', (e) => {
+                    flyToStore(marker);
+                    createPopUp(marker);
+                    const activeItem = document.getElementsByClassName('active');
+                    e.stopPropagation();
+                    if (activeItem[0]) {
+                        activeItem[0].classList.remove('active');
+                    }
+                    const listing = document.getElementById(
+                        `listing-${marker.properties.id}`
+                    );
+                    listing.classList.add('active');
+                });
+            }
+        }
+
+        function buildLocationList(stores) {
+            for (const store of stores.features) {
+                const listings = document.getElementById('listings');
+                const listing = listings.appendChild(document.createElement('div'));
+                listing.id = `listing-${store.properties.id}`;
+                listing.className = 'item';
+
+                const link = listing.appendChild(document.createElement('a'));
+                link.href = '#';
+                link.className = 'title';
+                link.id = `link-${store.properties.id}`;
+                link.innerHTML = `${store.properties.address}`;
+
+                const details = listing.appendChild(document.createElement('div'));
+                details.innerHTML = `${store.properties.city}`;
+                if (store.properties.phone) {
+                    details.innerHTML += ` &middot; ${store.properties.phoneFormatted}`;
+                }
+
+                link.addEventListener('click', function () {
+                    for (const feature of stores.features) {
+                        if (this.id === `link-${feature.properties.id}`) {
+                            flyToStore(feature);
+                            createPopUp(feature);
+                        }
+                    }
+                    const activeItem = document.getElementsByClassName('active');
+                    if (activeItem[0]) {
+                        activeItem[0].classList.remove('active');
+                    }
+                    this.parentNode.classList.add('active');
+                });
+            }
+        }
+
+        function flyToStore(currentFeature) {
+            map.flyTo({
+                center: currentFeature.geometry.coordinates,
+                zoom: 15
+            });
+        }
+
+        function createPopUp(currentFeature) {
+            const popUps = document.getElementsByClassName('mapboxgl-popup');
+            if (popUps[0]) popUps[0].remove();
+            const popup = new mapboxgl.Popup({ closeOnClick: false })
+                .setLngLat(currentFeature.geometry.coordinates)
+                .setHTML(
+                    `<h3>Sweetgreen</h3><h4>${currentFeature.properties.address}</h4>`
+                )
+                .addTo(map);
+        }
+    </script>
+</body>
+
+</html>
